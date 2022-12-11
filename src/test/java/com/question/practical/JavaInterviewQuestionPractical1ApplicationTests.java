@@ -39,7 +39,7 @@ class JavaInterviewQuestionPractical1ApplicationTests {
 				new Employee(106, "Chinki", "Kumari", "Female", "UP", "TEACHING", 14000));
 		
 		assertEquals(list.size(), getEmployeeDetailsServiceImpl.getEmployeeDetails().size());
-		log.info("After getEmployeeDetails junit test case....");
+		log.info("After getEmployeeDetails junit test case....!");
 	}
 
 }
