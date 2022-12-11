@@ -28,7 +28,7 @@ class JavaInterviewQuestionPractical1ApplicationTests {
 	@Test
 	@Order(1)
 	public void getEmployeeDetails() {
-		log.info("Before getEmployeeDetails junit test case....");
+		log.info("Before getEmployeeDetails junit test case.......");
 		List<Employee> list = Arrays.asList(
 				new Employee(100, "Gourav", "Arya", "Male", "UP", "Banking", 120000),
 				new Employee(101, "Baijnath", "Kushwaha", "Male", "Jharkhand", "IT", 100000),
