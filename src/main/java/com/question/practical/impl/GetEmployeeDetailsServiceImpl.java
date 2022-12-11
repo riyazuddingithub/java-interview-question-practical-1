@@ -13,6 +13,8 @@ import com.question.practical.model.Employee;
 
 import ch.qos.logback.classic.Logger;
 @Service
+@Component
+
 public class GetEmployeeDetailsServiceImpl implements IGetEmployeeDetails {
 
 	
@@ -26,7 +28,8 @@ public class GetEmployeeDetailsServiceImpl implements IGetEmployeeDetails {
 			new Employee(103, "Deepak", "Kandaswamy", "Male", "Chainne", "IT", 130000),
 			new Employee(104, "Pinki", "Sharma", "Female", "Uthrakhand", "MARKT", 90000),
 			new Employee(105, "Neha", "Kumari", "Female", "Bihar", "MARKT", 40000),
-			new Employee(106, "Chinki", "Kumari", "Female", "UP", "TEACHING", 14000));
+			new Employee(106, "Chinki", "Kumari", "Female", "UP", "TEACHING", 14000)
+			);
 	
 	
 	@Override
