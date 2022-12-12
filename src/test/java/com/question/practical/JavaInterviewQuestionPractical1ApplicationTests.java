@@ -1,6 +1,7 @@
 package com.question.practical;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.mockito.Mockito.when;
 
 import java.util.Arrays;
 import java.util.List;
@@ -24,22 +25,33 @@ class JavaInterviewQuestionPractical1ApplicationTests {
 	
 	private static final Logger log = LoggerFactory.getLogger(JavaInterviewQuestionPractical1ApplicationTests.class);
 
-
+	List<Employee> list = Arrays.asList(
+			new Employee(100, "Gourav", "Arya", "Male", "UP", "Banking", 120000),
+			new Employee(101, "Baijnath", "Kushwaha", "Male", "Jharkhand", "IT", 100000),
+			new Employee(102, "Aviral", "Kumar", "Male", "Kanpur", "IT", 60000),
+			new Employee(103, "Deepak", "Kandaswamy", "Male", "Chainne", "IT", 130000),
+			new Employee(104, "Pinki", "Sharma", "Female", "Uthrakhand", "MARKT", 90000),
+			new Employee(105, "Neha", "Kumari", "Female", "Bihar", "MARKT", 40000),
+			new Employee(106, "Chinki", "Kumari", "Female", "UP", "TEACHING", 14000));
 	@Test
 	@Order(1)
 	public void getEmployeeDetails() {
 		log.info("Before getEmployeeDetails junit test case.......");
-		List<Employee> list = Arrays.asList(
-				new Employee(100, "Gourav", "Arya", "Male", "UP", "Banking", 120000),
-				new Employee(101, "Baijnath", "Kushwaha", "Male", "Jharkhand", "IT", 100000),
-				new Employee(102, "Aviral", "Kumar", "Male", "Kanpur", "IT", 60000),
-				new Employee(103, "Deepak", "Kandaswamy", "Male", "Chainne", "IT", 130000),
-				new Employee(104, "Pinki", "Sharma", "Female", "Uthrakhand", "MARKT", 90000),
-				new Employee(105, "Neha", "Kumari", "Female", "Bihar", "MARKT", 40000),
-				new Employee(106, "Chinki", "Kumari", "Female", "UP", "TEACHING", 14000));
 		
 		assertEquals(list.size(), getEmployeeDetailsServiceImpl.getEmployeeDetails().size());
 		log.info("After getEmployeeDetails junit test case....");
 	}
+	
+	@Test
+	@Order(2)
+	public void getEmployeeDetailsBasedOnId() {
+		log.info("Before calling method.... ");
+		List<Employee> list1 = Arrays.asList(
+				new Employee(100, "Gourav", "Arya", "Male", "UP", "Banking", 120000));
+		Integer id = 100;
+		assertEquals(list1.size(), getEmployeeDetailsServiceImpl.getEmployeeDetailsBasedOnId(id).size());
+		
+		log.info("After calling test method...");
 
+	}
 }
