@@ -1,6 +1,10 @@
 package com.question.practical.controller;
 
+import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
+import java.util.Optional;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -23,7 +27,7 @@ public class EmployeeDetailController {
 	
 	private static final Logger log = LoggerFactory.getLogger(EmployeeDetailController.class);
 
-	
+	// Fetch all employee details
 	@GetMapping("/getEmployeeDetails")
 	public List<Employee> getEmployeeDetails() {
 		log.info("Calling getEmployeeDetails controller.....");
@@ -31,10 +35,33 @@ public class EmployeeDetailController {
 	return getEmployee.getEmployeeDetails();
 	}
 	
+	
+	// Fetch employee details based on id.....
 	@GetMapping("/getEmployeeDetailsBasedOnId")
 	public List<Employee> getEmployeeDetailsBasedOnID(@RequestParam Integer id) {
 		log.info("Calling getEmployeeDetailsBasedOnID controller.....");
 		
 	return getEmployee.getEmployeeDetailsBasedOnId(id);
+	}
+	
+	//Find who is having max salary in the list...
+	@GetMapping("/getEmpWhoIsHavingMaxSalary")
+	public List<Employee> getEmpWhoIsHavingMaxSalary(){
+		log.info("Calling getEmpWhoIsHavingMaxSalary controller.....");
+		return getEmployee.getEmpWhoIsHavingMaxSalary();
+	}
+	
+	//Find department wise each employee who is having maximum salalry 
+	@GetMapping("/getDepartmentWiseMaxSalary")
+	public Map<String, Optional<Employee>>  getDepartmentWiseMaxSalary(){
+		Map<String, Optional<Employee>> listEmp = new HashMap<>();
+		listEmp = getEmployee.getDepartmentWiseMaxSalary();
+		return listEmp;
+	}
+	
+	//Find averageSalary of Female
+	@GetMapping("/getAverageSalaryOfFemaleAndMale")
+	public Map<String, Double> getAverageSalaryOfFemaleAndMale(){
+		return getEmployee.getAverageSalaryOfFemaleAndMale();
 	}
 }

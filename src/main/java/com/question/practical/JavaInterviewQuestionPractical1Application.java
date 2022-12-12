@@ -14,6 +14,7 @@ public class JavaInterviewQuestionPractical1Application {
 	public static void main(String[] args) {
 		SpringApplication.run(JavaInterviewQuestionPractical1Application.class, args);
 		log.info("Java interview question practical1 application.........");
+	
 	}
 
 }
